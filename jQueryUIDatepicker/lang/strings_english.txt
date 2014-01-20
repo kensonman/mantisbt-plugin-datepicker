@@ -1,0 +1,5 @@
+<?php
+
+$s_plugin_jQueryUIDatepicker_="";
+$s_plugin_jQueryUIDatepicker_title="jQuery UI DatePicker";
+$s_plugin_jQueryUIDatepicker_description="Replace the default date-selection control with jQuery UI datepicker";
