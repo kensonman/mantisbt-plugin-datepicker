@@ -46,6 +46,11 @@ class jQueryUIDatepickerPlugin extends MantisPlugin{
 		$result.="    jQuery('select[name $= \"_year\"]').each(function(){\n";
 		$result.="       var name=jQuery(this).attr('name');\n";
 		$result.="       name=name.substring(0, name.length-5);\n";
+		$result.="       var year=jQuery(this).parents(':first').find('[name$=\"_year\"]').val();\n";
+		$result.="       var month=jQuery(this).parents(':first').find('[name$=\"_month\"]').val();\n";
+		$result.="       var day=jQuery(this).parents(':first').find('[name$=\"_day\"]').val();\n";
+		$result.="       if(month.length==1) month='0'+month;\n";
+		$result.="       if(day.length==1) day='0'+day;\n";
 		$result.="       jQuery(this).parents(':first')\n";
 		$result.="          .empty()\n";
                 $result.="          .append('<input type=\"hidden\" name=\"'+name+'_year\"/>')\n";
@@ -61,6 +66,7 @@ class jQueryUIDatepickerPlugin extends MantisPlugin{
 		$result.="            ;\n";
 		$result.="          })\n";
 		$result.="       ;\n";
+		$result.="       if(year!='0') jQuery('input[name='+name+']').val(year+'-'+month+'-'+day);\n";
 		$result.="    });\n";
 		$result.="  });\n";
 		$result.="//--></script>\n";
