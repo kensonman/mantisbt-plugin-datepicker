@@ -53,9 +53,9 @@ class jQueryUIDatepickerPlugin extends MantisPlugin{
 		$result.="       if(day.length==1) day='0'+day;\n";
 		$result.="       jQuery(this).parents(':first')\n";
 		$result.="          .empty()\n";
-                $result.="          .append('<input type=\"hidden\" name=\"'+name+'_year\"/>')\n";
-                $result.="          .append('<input type=\"hidden\" name=\"'+name+'_month\"/>')\n";
-                $result.="          .append('<input type=\"hidden\" name=\"'+name+'_day\"/>')\n";
+                $result.="          .append('<input type=\"hidden\" name=\"'+name+'_year\" value=\"'+year+'\"/>')\n";
+                $result.="          .append('<input type=\"hidden\" name=\"'+name+'_month\" value=\"'+month+'\"/>')\n";
+                $result.="          .append('<input type=\"hidden\" name=\"'+name+'_day\" value=\"'+day+'\"/>')\n";
 		$result.="          .append('<input type=\"text\" name=\"'+name+'\" class=\"dateFld\" size=\"10\"/>')\n";
 		$result.="          .find('.dateFld').datepicker(".plugin_config_get('OPTIONS').").change(function(){\n";
 		$result.="            var val=jQuery(this).datepicker('getDate');\n";
